@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ============ SEO META TAGS ============ -->
+  <title>Subhadra Biswal | Data Analyst & Data Science Portfolio</title>
+  <meta name="description" content="Subhadra Biswal - Final-year CSE student specializing in Data Analytics, Data Science, and AI/ML. Explore projects in Python, SQL, Power BI, and data visualization built to solve real-world problems.">
+  <meta name="keywords" content="Data Analyst, Data Science, Python, SQL, Power BI, Data Visualization, EDA, Machine Learning, Portfolio">
+  <meta name="author" content="Subhadra Biswal">
+  <!-- Open Graph tags so link previews look professional when shared -->
+  <meta property="og:title" content="Subhadra Biswal | Data Analyst & Data Science Portfolio">
+  <meta property="og:description" content="Final-year CSE student building practical data-driven and AI-powered solutions.">
+  <meta property="og:type" content="website">
+
+  <!-- ============ FONTS ============ -->
+  <!-- Space Grotesk: display headings | Inter: body text | JetBrains Mono: data/stat labels -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- ============ ICONS ============ -->
+  <!-- Lightweight inline SVG icon set is used instead of an icon font/library to avoid extra paid/3rd-party dependencies -->
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Skip link for keyboard/screen-reader users to jump straight to content -->
+  <a href="#home" class="skip-link">Skip to main content</a>
+
+  <!-- ======================================================================
+       NAVIGATION BAR (sticky, active-section indicator, mobile hamburger)
+  ======================================================================= -->
+  <header class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <a href="#home" class="navbar__logo" aria-label="Subhadra Biswal - Home">SB<span class="navbar__logo-dot">.</span></a>
+
+      <!-- Desktop nav links -->
+      <nav class="navbar__nav" aria-label="Primary">
+        <ul class="navbar__list">
+          <li><a href="#home" class="navlink" data-navlink>Home</a></li>
+          <li><a href="#about" class="navlink" data-navlink>About</a></li>
+          <li><a href="#skills" class="navlink" data-navlink>Skills</a></li>
+          <li><a href="#projects" class="navlink" data-navlink>Projects</a></li>
+          <li><a href="#experience" class="navlink" data-navlink>Experience</a></li>
+          <li><a href="#education" class="navlink" data-navlink>Education</a></li>
+          <li><a href="#approach" class="navlink" data-navlink>Analytics Approach</a></li>
+          <li><a href="#contact" class="navlink" data-navlink>Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Hamburger button (mobile only, toggled via JS) -->
+      <button class="navbar__toggle" id="navToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileNav">
+        <span class="navbar__toggle-bar"></span>
+        <span class="navbar__toggle-bar"></span>
+        <span class="navbar__toggle-bar"></span>
+      </button>
+    </div>
+
+    <!-- Mobile slide-down nav panel -->
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
+      <ul>
+        <li><a href="#home" class="navlink" data-navlink>Home</a></li>
+        <li><a href="#about" class="navlink" data-navlink>About</a></li>
+        <li><a href="#skills" class="navlink" data-navlink>Skills</a></li>
+        <li><a href="#projects" class="navlink" data-navlink>Projects</a></li>
+        <li><a href="#experience" class="navlink" data-navlink>Experience</a></li>
+        <li><a href="#education" class="navlink" data-navlink>Education</a></li>
+        <li><a href="#approach" class="navlink" data-navlink>Analytics Approach</a></li>
+        <li><a href="#contact" class="navlink" data-navlink>Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="home">
+
+    <!-- ======================================================================
+         HERO SECTION — thesis statement of the whole site.
+         Signature element: a simulated data-profiling terminal log that
+         "types" itself out on load, evoking real analyst work (df.info(),
+         missing-value scans) rather than a decorative illustration.
+    ======================================================================= -->
+    <section class="hero">
+      <!-- Ambient background: faint animated line-chart path, decorative only -->
+      <svg class="hero__bg-chart" viewBox="0 0 1200 400" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <polyline class="hero__bg-line" points="0,320 100,300 200,260 300,280 400,200 500,220 600,140 700,170 800,90 900,120 1000,60 1100,90 1200,40" />
+      </svg>
+
+      <div class="hero__inner">
+        <div class="hero__text">
+          <!-- PROFILE PHOTO PLACEHOLDER: user will add their own photo -->
+          <!-- <img src="assets/profile.jpg" alt="Subhadra Biswal" class="hero__photo"> -->
+          <div class="hero__photo hero__photo--placeholder" role="img" aria-label="Profile photo placeholder">
+            <span>Add your photo here<br><small>(replace this div with &lt;img src="assets/profile.jpg"&gt;)</small></span>
+          </div>
+
+          <p class="hero__eyebrow">Hi, I'm Subhadra Biswal</p>
+          <h1 class="hero__headline">Aspiring Data Analytics <span class="hero__pipe">|</span> Data Science <span class="hero__pipe">|</span> AI &amp; ML</h1>
+          <p class="hero__sub">Final-year Computer Science Engineering student building practical data-driven and AI-powered solutions.</p>
+
+          <!-- Hero call-to-action buttons -->
+          <div class="hero__ctas">
+            <a href="#projects" class="btn btn--primary">View My Projects</a>
+            <!-- RESUME PLACEHOLDER: replace href with actual resume PDF path -->
+            <a href="assets/Subhadra_Biswal_Resume.pdf" class="btn btn--ghost" download>Download Resume</a>
+            <a href="#contact" class="btn btn--text">Let's Connect →</a>
+          </div>
+        </div>
+
+        <!-- Terminal-style data profiling animation (the "signature" visual) -->
+        <div class="hero__terminal" aria-hidden="true">
+          <div class="hero__terminal-bar">
+            <span class="dot dot--red"></span><span class="dot dot--amber"></span><span class="dot dot--green"></span>
+            <span class="hero__terminal-title">data_profile.py — output</span>
+          </div>
+          <pre class="hero__terminal-body"><code id="terminalTyped"></code><span class="hero__cursor">▌</span></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         ABOUT SECTION
+    ======================================================================= -->
+    <section class="section" id="about">
+      <div class="section__inner">
+        <p class="section__eyebrow">About</p>
+        <h2 class="section__title">Turning raw data into decisions</h2>
+        <p class="about__text">
+          I'm a final-year B.Tech Computer Science Engineering student at Synergy Institute,
+          affiliated with Biju Patnaik University of Technology (BPUT), Rourkela. My core interest
+          lies in <strong>data analytics and data science</strong> — figuring out what a dataset is
+          actually trying to say, and turning that into something a decision-maker can act on.
+        </p>
+        <p class="about__text">
+          Alongside that, I work with <strong>AI and machine learning</strong> to build practical,
+          intelligent tools — from automated data-profiling systems to NLP-based applications.
+          I'm not claiming to be an expert; I'm a student who learns by building, breaking, and
+          rebuilding real projects, and I'm currently preparing for internships, placements, and
+          hackathons like Smart India Hackathon.
+        </p>
+        <p class="about__text">
+          What I care about most: asking the right question of a dataset, cleaning it honestly,
+          visualizing it clearly, and explaining what it means in plain language.
+        </p>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SKILLS SECTION — grouped by category, no fake proficiency percentages
+    ======================================================================= -->
+    <section class="section section--alt" id="skills">
+      <div class="section__inner">
+        <p class="section__eyebrow">Skills</p>
+        <h2 class="section__title">What I work with</h2>
+        <p class="section__lede">Organized by category, not inflated with fake proficiency scores — this is the honest stack I use day to day.</p>
+
+        <div class="skills-grid">
+
+          <!-- Skill category card: Core Data Analytics -->
+          <div class="skill-card">
+            <h3 class="skill-card__title">Core Data Analytics</h3>
+            <ul class="skill-card__tags">
+              <li>Python</li><li>Pandas</li><li>NumPy</li><li>Data Cleaning</li>
+              <li>Data Preprocessing</li><li>Exploratory Data Analysis</li>
+              <li>Data Visualization</li><li>Statistical Analysis</li>
+            </ul>
+          </div>
+
+          <!-- Skill category card: Visualization -->
+          <div class="skill-card">
+            <h3 class="skill-card__title">Visualization</h3>
+            <ul class="skill-card__tags">
+              <li>Matplotlib</li><li>Seaborn</li><li>Plotly</li><li>Power BI Visuals</li>
+            </ul>
+          </div>
+
+          <!-- Skill category card: Databases -->
+          <div class="skill-card">
+            <h3 class="skill-card__title">Databases</h3>
+            <ul class="skill-card__tags">
+              <li>SQL</li><li>MySQL</li><li>PostgreSQL</li><li>MongoDB</li>
+            </ul>
+          </div>
+
+          <!-- Skill category card: Business Intelligence -->
+          <div class="skill-card">
+            <h3 class="skill-card__title">Business Intelligence</h3>
+            <ul class="skill-card__tags">
+              <li>Power BI</li><li>Excel</li><li>Tableau</li>
+            </ul>
+          </div>
+
+          <!-- Skill category card: AI / ML tools used in projects -->
+          <div class="skill-card">
+            <h3 class="skill-card__title">AI / ML Tooling</h3>
+            <ul class="skill-card__tags">
+              <li>Scikit-learn</li><li>NLTK</li><li>YOLOv8</li><li>Cosine Similarity / TF-IDF</li>
+            </ul>
+          </div>
+
+          <!-- Skill category card: Dev tools that support data projects -->
+          <div class="skill-card">
+            <h3 class="skill-card__title">Tools &amp; Platforms</h3>
+            <ul class="skill-card__tags">
+              <li>Flask</li><li>Git &amp; GitHub</li><li>Jupyter Notebook</li><li>VS Code</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         PROJECTS SECTION — filterable grid, populated dynamically via JS
+         from the projectData array in script.js (keeps HTML clean + DRY).
+    ======================================================================= -->
+    <section class="section" id="projects">
+      <div class="section__inner">
+        <p class="section__eyebrow">Projects</p>
+        <h2 class="section__title">Case studies, not just code</h2>
+        <p class="section__lede">Each project follows the same lens: Problem → Data → Cleaning → Analysis → Visualization → Insights → Impact.</p>
+
+        <!-- Filter buttons — functionality wired up in script.js -->
+        <div class="filters" role="tablist" aria-label="Filter projects by category">
+          <button class="filter-btn is-active" data-filter="All" role="tab" aria-selected="true">All</button>
+          <button class="filter-btn" data-filter="Data Analytics" role="tab" aria-selected="false">Data Analytics</button>
+          <button class="filter-btn" data-filter="Data Science" role="tab" aria-selected="false">Data Science</button>
+          <button class="filter-btn" data-filter="AI/ML" role="tab" aria-selected="false">AI / ML</button>
+          <button class="filter-btn" data-filter="Web Development" role="tab" aria-selected="false">Web Development</button>
+        </div>
+
+        <!-- Project cards are injected here by renderProjects() in script.js -->
+        <div class="project-grid" id="projectGrid"></div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         PROJECT CASE-STUDY MODAL (shared, filled dynamically per project)
+    ======================================================================= -->
+    <div class="modal-overlay" id="modalOverlay" aria-hidden="true">
+      <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" id="modal">
+        <button class="modal__close" id="modalClose" aria-label="Close project details">&times;</button>
+        <div class="modal__content" id="modalContent">
+          <!-- Filled by openProjectModal() in script.js -->
+        </div>
+      </div>
+    </div>
+
+    <!-- ======================================================================
+         EXPERIENCE SECTION
+    ======================================================================= -->
+    <section class="section section--alt" id="experience">
+      <div class="section__inner">
+        <p class="section__eyebrow">Experience</p>
+        <h2 class="section__title">Where I've applied this</h2>
+
+        <div class="timeline">
+          <!-- Experience entry: Cognifyz -->
+          <div class="timeline__item">
+            <div class="timeline__marker"></div>
+            <div class="timeline__card">
+              <h3 class="timeline__role">Data Science Intern</h3>
+              <p class="timeline__org">Cognifyz IT Solutions Pvt. Ltd.</p>
+              <p class="timeline__date">16 July 2026 – 16 August 2026</p>
+              <p class="timeline__desc">
+                Worked on practical data science and analytics tasks using Python —
+                including data preprocessing, exploratory data analysis, data visualization,
+                and statistical/data-driven analysis on real datasets.
+              </p>
+            </div>
+          </div>
+
+          <!-- Experience entry: OCAC -->
+          <div class="timeline__item">
+            <div class="timeline__marker"></div>
+            <div class="timeline__card">
+              <h3 class="timeline__role">Intern</h3>
+              <p class="timeline__org">OCAC (Odisha Computer Application Centre), Bhubaneswar</p>
+              <p class="timeline__desc">
+                Focused on Python-based development, strengthening my foundation
+                in programming logic and data handling that now feeds directly into my analytics work.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         EDUCATION SECTION
+    ======================================================================= -->
+    <section class="section" id="education">
+      <div class="section__inner">
+        <p class="section__eyebrow">Education</p>
+        <h2 class="section__title">Academic background</h2>
+
+        <div class="edu-card">
+          <h3 class="edu-card__degree">B.Tech — Computer Science &amp; Engineering</h3>
+          <p class="edu-card__institute">Synergy Institute of Engineering and Technology (SIET), Dhenkanal</p>
+          <p class="edu-card__uni">Affiliated to Biju Patnaik University of Technology (BPUT), Rourkela, Odisha</p>
+          <p class="edu-card__year">Final Year / 7th Semester</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         ANALYTICS APPROACH SECTION — "What I Do With Data" workflow
+         Numbered steps are appropriate here: this IS a real sequential process.
+    ======================================================================= -->
+    <section class="section section--alt" id="approach">
+      <div class="section__inner">
+        <p class="section__eyebrow">Analytics Approach</p>
+        <h2 class="section__title">What I do with data</h2>
+
+        <ol class="pipeline">
+          <li class="pipeline__step">
+            <span class="pipeline__num">01</span>
+            <div><h3>Understand the Problem</h3><p>Clarify the real question before touching any data.</p></div>
+          </li>
+          <li class="pipeline__step">
+            <span class="pipeline__num">02</span>
+            <div><h3>Collect / Explore Data</h3><p>Understand the source, structure, and shape of the dataset.</p></div>
+          </li>
+          <li class="pipeline__step">
+            <span class="pipeline__num">03</span>
+            <div><h3>Clean &amp; Preprocess</h3><p>Handle missing values, duplicates, and inconsistent types.</p></div>
+          </li>
+          <li class="pipeline__step">
+            <span class="pipeline__num">04</span>
+            <div><h3>Analyze</h3><p>Look for patterns, trends, correlations, and outliers.</p></div>
+          </li>
+          <li class="pipeline__step">
+            <span class="pipeline__num">05</span>
+            <div><h3>Visualize</h3><p>Choose the chart type that answers the question clearly.</p></div>
+          </li>
+          <li class="pipeline__step">
+            <span class="pipeline__num">06</span>
+            <div><h3>Find Insights</h3><p>Translate charts into statements someone can act on.</p></div>
+          </li>
+          <li class="pipeline__step">
+            <span class="pipeline__num">07</span>
+            <div><h3>Communicate Impact</h3><p>Explain why the insight matters in plain, business-relevant terms.</p></div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         LEARNING / GROWTH SECTION
+    ======================================================================= -->
+    <section class="section" id="growth">
+      <div class="section__inner">
+        <p class="section__eyebrow">Always Learning</p>
+        <h2 class="section__title">Currently building on</h2>
+        <ul class="growth-list">
+          <li>Data Analytics &amp; Data Visualization</li>
+          <li>Machine Learning fundamentals</li>
+          <li>Applied AI projects</li>
+          <li>Python for data work</li>
+          <li>Hackathons (Smart India Hackathon prep)</li>
+          <li>NPTEL — Machine Learning</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         FIND MY WORK — social / online presence links
+    ======================================================================= -->
+    <section class="section section--alt" id="find-my-work">
+      <div class="section__inner">
+        <p class="section__eyebrow">Find My Work</p>
+        <h2 class="section__title">See it for yourself</h2>
+        <div class="social-links">
+          <!-- PLACEHOLDER LINKS: replace with real profile URLs -->
+          <a href="YOUR_LINKEDIN_URL" class="social-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="YOUR_GITHUB_URL" class="social-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="YOUR_KAGGLE_URL" class="social-link" target="_blank" rel="noopener noreferrer">Kaggle</a>
+          <a href="#home" class="social-link">Portfolio (you're on it)</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         CONTACT SECTION
+    ======================================================================= -->
+    <section class="section" id="contact">
+      <div class="section__inner">
+        <p class="section__eyebrow">Contact</p>
+        <h2 class="section__title">Let's connect</h2>
+        <p class="section__lede">Have a role, a project, or a question? Send a message below.</p>
+
+        <!-- Contact form: front-end only — see script.js for validation/submit-handling comments -->
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary">Send Message</button>
+          <!-- Live region for form feedback, announced to screen readers -->
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+
+        <div class="contact-alt">
+          <!-- PLACEHOLDER CONTACT DETAILS -->
+          <p>Email: <a href="mailto:YOUR_EMAIL_HERE">YOUR_EMAIL_HERE</a></p>
+          <p>LinkedIn: <a href="YOUR_LINKEDIN_URL">YOUR_LINKEDIN_URL</a></p>
+          <p>GitHub: <a href="YOUR_GITHUB_URL">YOUR_GITHUB_URL</a></p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======================================================================
+       FOOTER
+  ======================================================================= -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <p>© <span id="year"></span> Subhadra Biswal. Built with data, not just decoration.</p>
+      <a href="YOUR_GITHUB_URL" target="_blank" rel="noopener noreferrer" class="footer__github">GitHub Profile →</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
