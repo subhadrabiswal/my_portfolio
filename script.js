@@ -50,12 +50,50 @@ document.addEventListener('DOMContentLoaded', () => {
       ],
       impact: 'Reduces the time between "I have a dataset" and "I understand my dataset" — useful for analysts, students, and small teams without dedicated data-engineering support.',
       conclusion: 'Currently a personal/academic project built to demonstrate an end-to-end automated analytics workflow, from upload to AI-generated insight.',
-      github: 'YOUR_GITHUB_PROJECT_URL',
-      demo: 'YOUR_LIVE_DEMO_URL'
+      github: 'https://github.com/subhadrabiswal/DA_Copilot.git',
     },
+    
+    {
+      id: 'resume-analyzer',
+      tier: 2,
+      title: 'AI Resume Analyzer',
+      categories: ['AI/ML', 'Data Science','Python'],
+      shortDesc: 'An NLP-based application that analyzes resumes against job descriptions using text-similarity techniques.',
+      tech: ['Python', 'Streamlit', 'NLTK', 'Scikit-learn', 'TF-IDF', 'Cosine Similarity', 'PostgreSQL', 'Supabase', 'Render'],
+      problem: 'Parents/students who shift to a new city often need immediate education support and may not know how to find suitable tutors nearby.',
+      dataset: 'Tutors register their profiles, including location and subjects taught. Students/parents can search for tutors based on their current city and subject requirements.',
+      cleaning: [''],
+      eda: ['Not a tabular-EDA project — the core "analysis" is NLP text-similarity scoring between resume and job description.'],
+      visuals: 'Similarity scores and keyword-match feedback presented through a Streamlit interface.',
+      insights: ['TF-IDF + cosine similarity gives an interpretable, lightweight way to score resume-to-job-description relevance without needing a large trained model.'],
+      impact: 'Gives a candidate quick, concrete feedback on resume-language alignment before applying.',
+      conclusion: 'Built and deployed as full-stack developer and team lead, covering both the NLP scoring logic and the surrounding web application.',
+      github: 'https://github.com/subhadrabiswal/ResumeAnalyzer_.git',
+    },
+    // cmt: TutorBridge had the same id as the Resume Analyzer. Give it a unique id
+    // so clicking the TutorBridge card opens the correct TutorBridge case study.
+    {
+      id: 'tutorbridge',
+      tier: 3,
+      title: 'TutorBridge',
+      categories: ['Python'],
+      shortDesc: 'TutorBridge is a location-based tutor search system designed for parents/students who shift to a new city and need immediate education support.',
+      tech: ['Python', 'tkinter','MySQL','Github'],
+      problem: 'Parents/students who shift to a new city often need immediate education support and may not know how to find suitable tutors nearby.',
+      dataset: 'TutorBridge uses a MySQL database containing tutor, student, admin, and feedback data, including subjects, cities, qualifications, and ratings.',
+      cleaning: ['The system validates user inputs during registration and maintains consistent data through validation rules, approved tutor filtering, and rating constraints'],
+      eda: ['The Admin module analyzes tutor data based on subject, city, and ratings to understand tutor distribution and feedback.'],
+      visuals: 'Reports provide summarized information about tutors across different subjects, cities, and rating categories for easier analysis.',
+      insights: ['The analysis helps identify tutor availability by location and subject while using ratings and feedback to understand tutor performance.'],
+      impact: 'TutorBridge reduces the effort required to find suitable tutors and provides students and parents with a more organized and reliable tutor-selection process.',
+      conclusion: 'TutorBridge creates a centralized platform connecting students with suitable tutors while providing efficient tutor management, search, approval, and feedback features.',
+      github: 'https://github.com/subhadrabiswal/Tutor_Bridge.git',
+
+    },
+
     {
       id: 'cognifyz',
-      tier: 2,
+      tier: 4,
       title: 'Data Science Internship — Cognifyz',
       categories: ['Data Science'],
       shortDesc: 'Practical data science and analytics work completed during a one-month internship: preprocessing, EDA, visualization, and Python-based analysis on real datasets.',
@@ -68,81 +106,9 @@ document.addEventListener('DOMContentLoaded', () => {
       insights: ['Strengthened hands-on ability to go from a raw dataset to a working analysis independently, within internship deadlines.'],
       impact: 'Directly built the practical EDA and preprocessing muscle now used across my other analytics projects.',
       conclusion: 'A one-month internship (16 July – 16 August 2026) focused on applied data science tasks rather than a single company product — no company-specific outcomes are claimed here.',
-      github: 'YOUR_GITHUB_PROJECT_URL',
-      demo: null
+      github: 'https://github.com/subhadrabiswal/cognifyz_data_science_intern.git',
     },
-    {
-      id: 'ai-monitoring',
-      tier: 3,
-      title: 'AI Monitoring System for Industrial Safety',
-      categories: ['AI/ML'],
-      shortDesc: 'A computer-vision based monitoring system aimed at improving industrial safety through real-time object/person detection.',
-      tech: ['Python', 'React.js', 'Node.js', 'YOLOv8', 'Firebase'],
-      problem: 'Manual monitoring of industrial safety compliance (e.g. protective equipment, restricted zones) is hard to sustain continuously and consistently.',
-      dataset: 'Image/video frames processed in real time through a YOLOv8 detection pipeline rather than a static labeled dataset.',
-      cleaning: ['Frame preprocessing before inference', 'Filtering low-confidence detections'],
-      eda: ['Not applicable in the traditional tabular-EDA sense — analysis here is detection-accuracy and latency focused rather than statistical.'],
-      visuals: 'Live detection overlays on video feed; a React-based dashboard for monitoring status, backed by Firebase for real-time updates.',
-      insights: ['Demonstrates how object detection can be wired into a real-time monitoring dashboard rather than a one-off notebook model.'],
-      impact: 'Illustrates a practical direction for AI-assisted safety monitoring; not deployed in a live industrial setting.',
-      conclusion: 'An applied computer-vision project connecting a YOLOv8 detection pipeline to a full-stack real-time dashboard.',
-      github: 'YOUR_GITHUB_PROJECT_URL',
-      demo: 'YOUR_LIVE_DEMO_URL'
-    },
-    {
-      id: 'resume-analyzer',
-      tier: 3,
-      title: 'AI Resume Analyzer',
-      categories: ['AI/ML', 'Data Science'],
-      shortDesc: 'An NLP-based application that analyzes resumes against job descriptions using text-similarity techniques.',
-      tech: ['Python', 'Streamlit', 'NLTK', 'Scikit-learn', 'TF-IDF', 'Cosine Similarity', 'PostgreSQL', 'Supabase', 'React.js', 'Node.js', 'Express.js', 'Render'],
-      problem: 'Job seekers often don\'t know how well their resume actually matches a specific job description\'s language and requirements.',
-      dataset: 'User-submitted resume text and job description text, processed at request time (no pre-existing labeled dataset).',
-      cleaning: ['Text preprocessing: tokenization, stopword removal, normalization', 'Handling inconsistent resume formatting/input'],
-      eda: ['Not a tabular-EDA project — the core "analysis" is NLP text-similarity scoring between resume and job description.'],
-      visuals: 'Similarity scores and keyword-match feedback presented through a Streamlit interface.',
-      insights: ['TF-IDF + cosine similarity gives an interpretable, lightweight way to score resume-to-job-description relevance without needing a large trained model.'],
-      impact: 'Gives a candidate quick, concrete feedback on resume-language alignment before applying.',
-      conclusion: 'Built and deployed as full-stack developer and team lead, covering both the NLP scoring logic and the surrounding web application.',
-      github: 'YOUR_GITHUB_PROJECT_URL',
-      demo: 'YOUR_LIVE_DEMO_URL'
-    },
-    {
-      id: 'agri-connect',
-      tier: 4,
-      title: 'Agri Connect',
-      categories: ['Web Development'],
-      shortDesc: 'An agriculture-focused web application connecting users around agricultural needs and information.',
-      tech: ['MongoDB', 'React.js', 'Express.js', 'Node.js'],
-      problem: 'Farmers and agricultural stakeholders often lack a single accessible platform for relevant information and connections.',
-      dataset: 'Application data (users, listings/records) stored in MongoDB — not a data-analysis dataset.',
-      cleaning: ['Standard input validation on the MERN stack forms'],
-      eda: ['Not applicable — this is a web application project, not a data-analysis project.'],
-      visuals: 'Standard web UI components rather than data visualizations.',
-      insights: ['N/A — included here as a full-stack development project, not a data-analytics case study.'],
-      impact: 'A practical MERN-stack application addressing a real-world agricultural use case.',
-      conclusion: 'A full-stack web development project built with the MERN stack.',
-      github: 'YOUR_GITHUB_PROJECT_URL',
-      demo: null
-    },
-    {
-      id: 'pragyalok',
-      tier: 4,
-      title: 'PragyaLok',
-      categories: ['Web Development'],
-      shortDesc: 'A web application project built with the MERN-adjacent stack (React, Express, MongoDB).',
-      tech: ['React.js', 'Express.js', 'MongoDB', 'HTML', 'CSS'],
-      problem: 'Built as a full-stack web development exercise/project.',
-      dataset: 'Application data stored in MongoDB — not a data-analysis dataset.',
-      cleaning: ['Standard form input validation'],
-      eda: ['Not applicable — web development project.'],
-      visuals: 'Standard web UI, not data visualization.',
-      insights: ['N/A — included as a web development project.'],
-      impact: 'Demonstrates full-stack web development capability alongside the data-focused project work.',
-      conclusion: 'A concise web development project, kept intentionally brief relative to the data-analytics case studies above.',
-      github: 'YOUR_GITHUB_PROJECT_URL',
-      demo: null
-    }
+    
   ];
 
   /* =======================================================================
@@ -159,6 +125,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Sort by tier so featured/higher-priority projects appear first
     visible.sort((a, b) => a.tier - b.tier);
 
+    // cmt: The project's id is assigned to the article via data-id="${p.id}".
+    // Changing a project's `id` in the `projectData` array will affect which case study
+    // opens when a project card is clicked.
     projectGrid.innerHTML = visible.map(p => `
       <article class="project-card ${p.featured ? 'project-card--featured' : ''}" data-id="${p.id}" tabindex="0" role="button" aria-label="View case study: ${p.title}">
         ${p.featured ? '<p class="project-card__badge">Featured Project</p>' : ''}
@@ -170,8 +139,6 @@ document.addEventListener('DOMContentLoaded', () => {
         <span class="project-card__cta">View Case Study →</span>
       </article>
     `).join('');
-
-    // Wire up click + keyboard (Enter) interaction on each freshly-rendered card
     document.querySelectorAll('.project-card').forEach(card => {
       card.addEventListener('click', () => openProjectModal(card.dataset.id));
       card.addEventListener('keypress', (e) => {
