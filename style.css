@@ -271,18 +271,30 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; line-height
 }
 
 /* Profile photo placeholder — replace with real <img> per HTML comment */
-.hero__photo--placeholder {
+.hero__photo {
   width: 110px;
   height: 110px;
   border-radius: 50%;
-  border: 2px dashed var(--border);
-  display: flex;
+  overflow: hidden;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  font-size: 0.68rem;
   color: var(--text-muted);
   margin-bottom: 22px;
+  background: transparent;
+}
+
+.hero__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero__photo--placeholder {
+  border: 2px dashed var(--border);
+  font-size: 0.68rem;
   padding: 8px;
   line-height: 1.3;
 }
@@ -761,16 +773,28 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; line-height
   .navbar__toggle { display: flex; }            /* show hamburger button */
   .mobile-nav { display: block; }               /* enable mobile nav panel */
 
-  .hero__inner { grid-template-columns: 1fr; }
+  .hero__inner { grid-template-columns: 1fr; gap: 32px; }
   .hero__terminal { order: -1; }                /* terminal shows above text on mobile */
+
+  /* Center content and enlarge photo slightly on tablets */
+  .hero__text { text-align: center; }
+  .hero__ctas { justify-content: center; }
+  .hero__photo { width: 140px; height: 140px; margin: 0 auto 18px; }
+  .hero__terminal { margin: 0 auto; width: 100%; max-width: 640px; }
 }
 
 /* Small tablets / large phones */
 @media (max-width: 640px) {
-  .section { padding: 64px 20px; }
-  .hero { padding: 50px 20px 60px; }
+  .section { padding: 64px 18px; }
+  .hero { padding: 48px 18px 56px; }
   .project-card--featured { grid-column: span 1; }
   .footer__inner { flex-direction: column; text-align: center; }
+
+  /* Reduce photo and text sizes for narrow screens */
+  .hero__photo { width: 120px; height: 120px; }
+  .hero__headline { font-size: clamp(1.6rem, 4.2vw, 2.4rem); }
+  .hero__sub { max-width: 100%; font-size: 1rem; }
+  .hero__terminal-body { min-height: 180px; }
 }
 
 /* Small mobile screens — tighten spacing further, ensure no overflow */
@@ -778,5 +802,11 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; line-height
   .hero__ctas { flex-direction: column; align-items: stretch; }
   .btn { justify-content: center; }
   .filters { gap: 8px; }
-  .modal { padding: 28px 20px; }
+  .modal { padding: 28px 16px; }
+
+  /* Compact hero layout for very small screens */
+  .hero { padding: 36px 14px 46px; }
+  .hero__photo { width: 96px; height: 96px; margin-bottom: 12px; }
+  .hero__headline { font-size: 1.45rem; }
+  .hero__terminal-body { padding: 12px; min-height: 140px; font-size: 0.78rem; }
 }
