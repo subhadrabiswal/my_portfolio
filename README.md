@@ -13,7 +13,7 @@ Local preview:
 # Python 3
 python -m http.server 8000
 
-# then open http://localhost:8000
+# then open https://subhadrabiswal.github.io/my_portfolio/
 ```
 
 Profile image notes:
@@ -21,6 +21,5 @@ Profile image notes:
 - Place your image in `assets/` and update the `<img src="...">` in `index.html`.
 
 Contact:
-- Email: add your preferred contact address in the `#contact` section of `index.html`.
+- Email: subhadrasony1312@gmail.com
 
-Feel free to tell me what else you'd like in the README (deployment instructions, badges, license, etc.).
