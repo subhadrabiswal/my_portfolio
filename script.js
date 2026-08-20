@@ -336,59 +336,53 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* =======================================================================
-     7. CONTACT FORM — front-end validation only.
-     No backend is wired up (per the "no paid APIs / no paid hosting"
-     requirement); this shows a clear success message on valid submission.
-     To make this functional, connect it to a form service (e.g. Formspree)
-     or your own backend endpoint — see the comment near the fetch() stub below.
+     7. CONTACT FORM — front-end validation only (guarded for DOM safety).
   ======================================================================= */
   const contactForm = document.getElementById('contactForm');
   const formStatus = document.getElementById('formStatus');
 
-  contactForm.addEventListener('submit', (e) => {
-    e.preventDefault(); // stop native form submission (no backend configured)
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault(); // stop native form submission
 
-    const nameField = document.getElementById('name');
-    const emailField = document.getElementById('email');
-    const messageField = document.getElementById('message');
-    let isValid = true;
+      const nameField = document.getElementById('name');
+      const emailField = document.getElementById('email');
+      const messageField = document.getElementById('message');
+      let isValid = true;
 
-    // Simple required-field + email-format validation
-    [nameField, messageField].forEach(field => {
-      const group = field.closest('.form-group');
-      if (!field.value.trim()) {
-        group.classList.add('has-error');
-        isValid = false;
-      } else {
-        group.classList.remove('has-error');
+      // Simple required-field + email-format validation
+      [nameField, messageField].forEach(field => {
+        if (field) {
+          const group = field.closest('.form-group');
+          if (!field.value.trim()) {
+            if (group) group.classList.add('has-error');
+            isValid = false;
+          } else {
+            if (group) group.classList.remove('has-error');
+          }
+        }
+      });
+
+      if (emailField) {
+        const emailGroup = emailField.closest('.form-group');
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(emailField.value.trim())) {
+          if (emailGroup) emailGroup.classList.add('has-error');
+          isValid = false;
+        } else {
+          if (emailGroup) emailGroup.classList.remove('has-error');
+        }
       }
+
+      if (!isValid) {
+        if (formStatus) formStatus.textContent = 'Please fill in all fields with a valid email address.';
+        return;
+      }
+
+      if (formStatus) formStatus.textContent = `Thanks, ${nameField ? nameField.value.trim() : ''}! Your message has been noted.`;
+      contactForm.reset();
     });
-
-    const emailGroup = emailField.closest('.form-group');
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailPattern.test(emailField.value.trim())) {
-      emailGroup.classList.add('has-error');
-      isValid = false;
-    } else {
-      emailGroup.classList.remove('has-error');
-    }
-
-    if (!isValid) {
-      formStatus.textContent = 'Please fill in all fields with a valid email address.';
-      return;
-    }
-
-    // ---- OPTIONAL: connect to a real form backend here ----
-    // Example using a free service like Formspree:
-    // fetch('https://formspree.io/f/YOUR_FORM_ID', {
-    //   method: 'POST',
-    //   headers: { 'Accept': 'application/json' },
-    //   body: new FormData(contactForm)
-    // });
-
-    formStatus.textContent = `Thanks, ${nameField.value.trim()}! Your message has been noted. (Connect this form to an email service to receive it.)`;
-    contactForm.reset();
-  });
+  }
 
   /* =======================================================================
      8. FOOTER YEAR — keeps the copyright year current automatically
